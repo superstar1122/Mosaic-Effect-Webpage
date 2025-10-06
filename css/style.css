@@ -1,0 +1,148 @@
+html {
+	font-size: calc(100vw / 1920 * 10);
+	--gap: 4rem;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+* {
+  line-height: 100%;
+  box-sizing: border-box;
+}
+button {
+  border: none;
+  background: transparent;
+}
+canvas#sketch {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	transition: background-image 1s ease-in-out .5s;
+  /* background: #000; */
+}
+
+ul.btns {
+	position: fixed;
+	z-index: 6;
+	top: 50svh;
+	right: 3svw;
+	transform: translate(0, -50%);
+	display: flex;
+	flex-direction: column;
+	gap: 0.8svh;
+	--offset: -1vw;
+}
+
+.btns button {
+	width: 6svh;
+	height: 6svh;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 0.5rem;
+	background-color: rgba(0, 0, 0, 0.2);
+	color: white;
+	font-family: var(--serif);
+	transition: background-color 0.2s ease, color 0.2s ease,
+		border-color 0.2s ease;
+	cursor: pointer;
+}
+
+.btns button:hover {
+	background-color: black;
+	border-color: black;
+}
+
+li.btns__item:nth-child(odd) {
+	transform: translateX(calc(var(--offset) * 2));
+}
+
+.btns button.active {
+	background-color: white;
+	color: black;
+	pointer-events: none;
+}
+
+ul.btns {
+	top: auto;
+	bottom: 5svh;
+	right: auto;
+	left: 50vw;
+	flex-direction: row;
+	gap: 13rem;
+	transform: translate(-50%, 0%);
+}
+
+.btns button {
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 9svh;
+	height: 9svh;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btns button svg {
+	height: 2.7rem;
+}
+
+.btns button svg path {
+	fill: white;
+}
+
+.btns button.active {
+	background: rgba(0, 0, 0, 0.2);
+	border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+li.btns__item:nth-child(odd) {
+	transform: translateY(calc(var(--offset) * 3));
+}
+
+
+/* Updated by SuperStar */
+[data-current="heart"] {
+	/* background-color: #e19800 !important; */
+	background-image: url(../images/AthenBackground_01.png);
+}
+
+[data-current="codrops"] {
+	/* background-color: #00a00b !important; */
+	background-image: url(../images/AthenBackground_02.png);
+}
+
+[data-current="smile"] {
+	/* background-color: #b90000 !important; */
+	background-image: url(../images/AthenBackground_03.png);
+}
+
+
+.partners {
+	position: fixed;
+	z-index: 2;
+	cursor: pointer;
+	top: var(--gap);
+	left: var(--gap);
+	color: white;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4rem;
+}
+
+.partners__each svg {
+	max-height: 2rem;
+	width: 11.1rem;
+}
+.partners__dot {
+	width: 0.7rem;
+	height: 0.7rem;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+}
