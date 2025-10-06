@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'DIN Bold';
+  src: url('../font/DIN\ NEXT™\ ARABIC\ BOLD.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN Light';
+  src: url('../font/DIN\ NEXT™\ ARABIC\ LIGHT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN Medium';
+  src: url('../font/DIN\ NEXT™\ ARABIC\ MEDIUM\ .otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DIN Regular';
+  src: url('../font/DIN\ NEXT™\ ARABIC\ REGULAR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Use it anywhere */
+body {
+  font-family: 'Din Light', sans-serif;
+}

@@ -8,7 +8,7 @@ export default class Models {
     this.group = new THREE.Group()
     this.scene.add(this.group)
 
-    this.gridSize = 42
+    this.gridSize = 40
     this.spacing = 0.6
     this.grids = []
     this._remainingToCreate = 0
@@ -29,6 +29,7 @@ export default class Models {
     this._remainingToCreate = this.grids_config.length
     this.grids_config.forEach(cfg => this._createMaskAndGrid(cfg))
     this.group.scale.setScalar(0.08)
+    this.group.position.y = 0.3
   }
 
   _createMaskAndGrid(config) {
