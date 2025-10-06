@@ -8,8 +8,8 @@ export default class Models {
     this.group = new THREE.Group()
     this.scene.add(this.group)
 
-    this.gridSize = 64
-    this.spacing = 0.5
+    this.gridSize = 42
+    this.spacing = 0.6
     this.grids = []
     this._remainingToCreate = 0
 
@@ -28,7 +28,7 @@ export default class Models {
 
     this._remainingToCreate = this.grids_config.length
     this.grids_config.forEach(cfg => this._createMaskAndGrid(cfg))
-    this.group.scale.setScalar(0.12)
+    this.group.scale.setScalar(0.08)
   }
 
   _createMaskAndGrid(config) {
@@ -68,10 +68,10 @@ export default class Models {
 
     const baseMat = texture
       ? new THREE.MeshStandardMaterial({
-          map: texture,
-          roughness: 0.7,
-          metalness: 0.2,
-        })
+        map: texture,
+        roughness: 0.7,
+        metalness: 0.2,
+      })
       : new THREE.MeshStandardMaterial({ color: 0x888888 })
 
     const threshold = 240
@@ -129,7 +129,7 @@ export default class Models {
   }
 
   _initInteractions() {
-    this.current = 'heart'
+    this.current = 'codrops'
     this.old = null
     this.is_animating = false
     this.duration = 1
@@ -144,10 +144,15 @@ export default class Models {
     })
 
     this.DOM.$btns.forEach(btn => {
+      console.log("active btn", btn.dataset.id, this.current);
       btn.classList.toggle('active', btn.dataset.id === this.current)
     })
 
     this._bindEvents()
+
+    //make the default mask visible
+    this._revealGrid()
+
   }
 
   _bindEvents() {
